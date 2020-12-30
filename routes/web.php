@@ -21,6 +21,8 @@ Route::get('/{user?}', function ($user = 'anonymous squirrel') {
 /*Route::get('/user/{user}/edad/{edad}', function ($user, $edad) {
     return 'user '.$user.' edad '.$edad;
 });*/
-route::get('/song/{id}', [SongController::class,'getSong']);
+Route::get('/song/{id}', [SongController::class,'getSong']);
+
+Route::post('/song/upload',[SongController::class,'uploadFile']);
 
 Route::redirect('/users', '/');

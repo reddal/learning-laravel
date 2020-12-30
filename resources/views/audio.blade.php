@@ -24,19 +24,9 @@
 </head>
 
 <body class="antialiased">
-    <div class="container">
-        <ul>
-            <li> song is: {{ $song->name }}</li>
-            <li> duration: {{ $song->dur }} </li>
-            <li> created the day: {{ $song->created_at }}</li>
-        </ul>
-    </div>
-
-    <form action="upload" method="post" enctype="multipart/form-data">
-        @csrf
-        <input type="file" name="audio">
-        <button type="submit">go!</button>
-    </form>
+<audio controls>
+    <source src="{{asset($audioPath)}}">
+</audio>
 </body>
 
 </html>

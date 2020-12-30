@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
@@ -71,7 +71,7 @@ CREATE TABLE `song` (
 --
 
 INSERT INTO `song` (`id`, `name`, `dur`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'como me gusta el porro', 420, 1, '1970-01-01 03:00:01', '1970-01-01 03:00:01'),
+(1, 'como me gusta el te', 420, 1, '1970-01-01 03:00:01', '1970-01-01 03:00:01'),
 (2, 'lana', 200, 1, '1970-01-01 03:00:01', '1970-01-01 03:00:01');
 
 -- --------------------------------------------------------
