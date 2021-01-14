@@ -24,6 +24,14 @@
 <body class="antialiased">
     <div class="container">
     <h1> welcome {{$name}}</h1>
+
+    <form action="upload" method="post" enctype="multipart/form-data">
+        @csrf
+        <input type="text" name="name" placeholder="insert name">
+        <input type="number" name="dur" placeholder="insert duration" step="0.1">
+        <input type="file" name="audio" placeholder="insert audio">
+        <button type="submit">go!</button>
+    </form>
     </div>
 
 

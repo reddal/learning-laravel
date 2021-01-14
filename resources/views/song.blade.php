@@ -30,13 +30,9 @@
             <li> duration: {{ $song->dur }} </li>
             <li> created the day: {{ $song->created_at }}</li>
         </ul>
+        <audio id="player" controls src="{{ asset($song->path) }}" type="audio/mpeg">
     </div>
 
-    <form action="upload" method="post" enctype="multipart/form-data">
-        @csrf
-        <input type="file" name="audio">
-        <button type="submit">go!</button>
-    </form>
 </body>
 
 </html>

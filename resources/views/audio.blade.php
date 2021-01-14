@@ -24,9 +24,16 @@
 </head>
 
 <body class="antialiased">
-<audio controls>
-    <source src="{{asset($audioPath)}}">
-</audio>
+    <div class="container">
+    <ul>
+        <li> song is: {{ $newSong->name }}</li>
+        <li> duration: {{ $newSong->dur }} </li>
+        <li> author id: {{$newSong->user_id}} </li>
+        <li> created the day: {{ $newSong->created_at }}</li>
+    </ul>
+    <audio id="player" controls src="{{ asset($newSong->path) }}" type="audio/mpeg">
+    </div>
+
 </body>
 
 </html>

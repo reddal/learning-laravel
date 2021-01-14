@@ -13,6 +13,7 @@ class song extends Model
         'id',
         'name',
         'dur',
+        'path',
         'user_id',
     ];
 

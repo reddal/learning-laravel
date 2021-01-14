@@ -23,6 +23,6 @@ Route::get('/{user?}', function ($user = 'anonymous squirrel') {
 });*/
 Route::get('/song/{id}', [SongController::class,'getSong']);
 
-Route::post('/song/upload',[SongController::class,'uploadFile']);
+Route::post('/upload',[SongController::class,'insertSong']);
 
 Route::redirect('/users', '/');

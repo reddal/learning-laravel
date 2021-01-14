@@ -22,22 +22,36 @@ class songController extends Controller
         ]);
     }*/
 
+    public function insertSong(Request $request,  FacadesStorage $storage)
+    {
+        $newSong = new Song();
+
+        $newSong->name = $request->name;
+        $newSong->dur = $request->dur;
+        $newSong->path = $this->uploadFile($request, $storage);
+        $newSong->user_id = 1;
+
+        $newSong->save();
+
+        return view('audio',['newSong'=> $newSong]);
+    }
+
     public function uploadFile(
-        Request $request,
-        FacadesStorage $storage
+        $request,
+        $storage
     ) {
         $file = $request->file('audio');
 
-        
+
 
         $newFilename =  uniqid(rand(), true) . '.' . $file->getClientOriginalExtension();
         $storage::disk('public')->put($newFilename, file_get_contents($file));
-        
-       // $example = $storage::disk('local')->get($newFilename);
+
+        // $example = $storage::disk('local')->get($newFilename);
 
         $path = $storage::url($newFilename);
         //var_dump($storage::url($newFilename));
         //die();
-        return view('audio', ['audioPath' => $path]);
+        return $path;
     }
 }
